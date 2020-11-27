@@ -33,10 +33,10 @@ function News() {
   
           useEffect(() => {
             setAppState({ loading: true });
-            const apiUrl = 'http://api.mediastack.com/v1/news?access_key=c0c5d36f2b0915afb0b0623c65134349&countries=de&keywords=corona';
+            const apiUrl = 'https://gnews.io/api/v4/search?q=corona&token=7e1140834e066608272e30de241a65ad';
             axios.get(apiUrl).then((repos) => {
               const allRepos = repos.data;
-              setItems( allRepos.data );
+              setItems( allRepos.articles );
               console.log(allRepos);
             });
           }, [setAppState]);
@@ -55,13 +55,14 @@ function News() {
                 items.map((news, key) =>
                     <NewsCard className="card">
                         <div className="c-img">
+                            <img src={news.image} />
                         </div>
                         <h4>{news.title}</h4>
-                        <p>{news.description}</p>
+                        <p>{news.content}</p>
                         <div className="lower">
                             <div>
-                                <p>Datum: {news.published_at.slice(0,10)}</p>
-                                <p>Quelle: {news.source}</p>
+                                <p>Datum: {news.publishedAt.slice(0,10)}</p>
+                                <p>Quelle: {news.source.name}</p>
                             </div>
                             <div>
                                 <a href={news.url} target="_blank">weiter lesen</a>
