@@ -17,6 +17,7 @@ function App() {
 const changeDir= (number) => {
   //setDir(number);
   menuDir = number;
+  
 }
 
 console.log(menuDir);
