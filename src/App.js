@@ -25,9 +25,9 @@ console.log(menuDir);
     <div className="App">
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Numbers} exact />
-        <Route path="/news" component={News} />
-        <Route path="/germany" component={Germany} />
+        <Route path="/covid-19/" component={Numbers} exact />
+        <Route path="/covid-19/news" component={News} />
+        <Route path="/covid-19/germany" component={Germany} />
       </Switch>
       <Menu dir={menuDir}  change={(e) => changeDir(e)}/>
     </BrowserRouter>
