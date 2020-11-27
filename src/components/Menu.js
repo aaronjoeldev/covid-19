@@ -31,9 +31,9 @@ useEffect(() => {
 
  
   return <div className="menu" data-value={page}>
-      <Link to="/" className="slide" foo="0" onClick={() => putPath(0)}></Link>
-      <Link to="/news" className="slide" foo="1" onClick={() => putPath(1)}></Link>
-      <Link to="/germany" className="slide" foo="2" onClick={() => putPath(2)}></Link>
+      <Link to="/covid-19" className="slide" foo="0" onClick={() => putPath(0)}></Link>
+      <Link to="/covid-19/news" className="slide" foo="1" onClick={() => putPath(1)}></Link>
+      <Link to="/covid-19/germany" className="slide" foo="2" onClick={() => putPath(2)}></Link>
   </div>;
 }
  
