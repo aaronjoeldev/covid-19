@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;900&display=swap');
+
+
+$primary-color: linear-gradient(to bottom, #2C4664, #04080D);
+$secondary-color: #3366A0;
+$thrid-color: #E37561;
+$third-color-shade:rgba(227,117,97,0.2);
+$element-height: calc(100vh - 120px);
+
+
+
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+.menu[data-value="0"]{
+    .slide{
+        &:first-child{
+            &::before{
+            margin-top:-25px
+            }
+        }
+    }
+}
+.menu[data-value="1"]{
+    .slide{
+        &:nth-child(2){
+            &::before{
+            margin-top:-25px
+            }
+        }
+    }
+}
+.menu[data-value="2"]{
+    .slide{
+        &:last-child{
+            &::before{
+            margin-top:-25px
+            }
+        }
+    }
+}
+
+.menu{
+    background-color: $secondary-color;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px 20px 0 0;
+    width: 90%;
+    margin: 0 auto;
+    [data-value="0"]{
+        .slide{
+            &:first-child{
+                margin-top:-25px
+            }
+        }
+    }
+    .slide{
+        position: relative;
+        width: 33.33%;
+        height: 80%;
+        &::before{
+            width: 60px;
+            height: 60px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            margin-top: 15px;
+            content:'';
+            position: absolute;
+            background-size: cover;
+            transition: all 0.75s ease-in-out;
+        }
+        &:hover{
+            &::before{
+                margin-top: -25px;
+            }
+        }
+        &:nth-child(1), &:nth-child(2){
+            border-right: 3px solid white;
+        }
+        &:first-child{
+            &::before{
+                background-image: url("./components/assets/earth-globe.png");
+            }
+        }
+        &:nth-child(2){
+            &::before{
+                background-image: url("./components/assets/newspaper.png");
+            }
+        }
+        &:last-child{
+            &::before{
+                background-image: url("./components/assets/coronavirus.png");
+            }
+        }
+    }
+    .active{
+        &::before{
+            margin-top: -25px;
+        }
+    }
+}
+
+h1{
+    color: $third-color-shade;
+    font-weight: 800;
+    font-size: 180px;
+    margin: 0;
+}
+h2{
+    color: $thrid-color;
+    font-weight: 300;
+    font-size: 80px;
+    margin: 0;
+}
+
+.headline{
+    position: relative;
+    display: inline-block;
+    h2{
+        position: absolute;
+        bottom: 25px;
+        text-align: center;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+}
+
+.numbers{
+    height: $element-height;
+    .totalNumbers{
+        font-size: 150px;
+        text-align: center;
+        color: $thrid-color;
+        font-weight: 300;
+    }
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.news{
+    .loading{
+        margin: 0 auto;
+        opacity: 0.2;
+        animation: rotate 20s infinite;
+    }
+}
+.newsCards{
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    padding-left: 2rem;
+    &::-webkit-scrollbar{
+        width: 0;
+    }
+    .card{
+        padding: 1rem 2rem;
+        border-radius: 10%;
+        flex-direction: column;
+        justify-content: space-around;
+        display: flex;
+        .lower{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .c-img{
+            background-image: url("./components/assets/virus.jpg");
+            width:100%;
+            height:80px;
+            background-size: cover;
+            background-position: center;
+        }
+        p{
+            max-height: 100px;
+            overflow: hidden;
+            font-size: 16px;
+            color: white;
+            font-weight:300;
+            margin-top: -5%;
+        }
+        h4{
+            color: white;
+            font-size:24px;
+        }
+        a{
+            border: 2px solid $thrid-color;
+            border-radius: 20px;
+            color: $thrid-color;
+            padding: 0.5rem 2rem;
+            text-decoration: none;
+            width: 40%;
+            text-align: center;
+            align-self: flex-end;
+        }
+    }
+}
+
+.App{
+background: $primary-color;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+}
+
+
+.germany{
+    .stats{
+        color: $thrid-color;
+        width: 50%;
+        padding-left: 5rem;
+        p{
+            font-size:40px;
+            font-weight: 300;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            span{
+                font-size: 80px;
+            }
+        }
+        .akt{
+            color: white;
+            font-size: 20px;
+            padding-right: 5rem;
+            margin-top: -2rem;
+        }
+    }
+    
+}
+
+
+@media only screen and (max-width: 800px){
+    .headline{
+        h1{
+            font-size: 6rem;
+        }
+        h2{
+            font-size: 4rem;
+            bottom: 10px;
+        }
+    }
+    .numbers{
+        .totalNumbers{
+            font-size: 4rem;
+            margin-top: 5rem;
+        }
+    }
+    .germany{
+        .stats{
+            color: #E37561;
+            width: 90%;
+            padding-left: 1rem;
+            p{
+                flex-direction: column;
+                font-size: 2rem;
+                span{
+                    font-size: 3rem;
+                }
+            }
+            .akt{
+                font-size: 0.9rem;
+                padding-right: 0;
+                margin-top: -1rem;
+            }
+        }
+    }
+    .newsCards{
+        .card{
+            max-height: 370px;
+            min-width: 300px;
+            h4{
+                word-break: break-all;
+            }
+            .lower{
+                flex-direction: column;
+            }
+        }
+    }
+}

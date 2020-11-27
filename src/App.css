@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;900&display=swap");
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
+.menu[data-value="0"] .slide:first-child::before {
+  margin-top: -25px;
+}
+
+.menu[data-value="1"] .slide:nth-child(2)::before {
+  margin-top: -25px;
+}
+
+.menu[data-value="2"] .slide:last-child::before {
+  margin-top: -25px;
+}
+
+.menu {
+  background-color: #3366A0;
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px 20px 0 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.menu [data-value="0"] .slide:first-child {
+  margin-top: -25px;
+}
+
+.menu .slide {
+  position: relative;
+  width: 33.33%;
+  height: 80%;
+}
+
+.menu .slide::before {
+  width: 60px;
+  height: 60px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 15px;
+  content: '';
+  position: absolute;
+  background-size: cover;
+  -webkit-transition: all 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
+}
+
+.menu .slide:hover::before {
+  margin-top: -25px;
+}
+
+.menu .slide:nth-child(1), .menu .slide:nth-child(2) {
+  border-right: 3px solid white;
+}
+
+.menu .slide:first-child::before {
+  background-image: url("./components/assets/earth-globe.png");
+}
+
+.menu .slide:nth-child(2)::before {
+  background-image: url("./components/assets/newspaper.png");
+}
+
+.menu .slide:last-child::before {
+  background-image: url("./components/assets/coronavirus.png");
+}
+
+.menu .active::before {
+  margin-top: -25px;
+}
+
+h1 {
+  color: rgba(227, 117, 97, 0.2);
+  font-weight: 800;
+  font-size: 180px;
+  margin: 0;
+}
+
+h2 {
+  color: #E37561;
+  font-weight: 300;
+  font-size: 80px;
+  margin: 0;
+}
+
+.headline {
+  position: relative;
+  display: inline-block;
+}
+
+.headline h2 {
+  position: absolute;
+  bottom: 25px;
+  text-align: center;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.numbers {
+  height: calc(100vh - 120px);
+}
+
+.numbers .totalNumbers {
+  font-size: 150px;
+  text-align: center;
+  color: #E37561;
+  font-weight: 300;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.news .loading {
+  margin: 0 auto;
+  opacity: 0.2;
+  -webkit-animation: rotate 20s infinite;
+          animation: rotate 20s infinite;
+}
+
+.newsCards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  padding-left: 2rem;
+}
+
+.newsCards::-webkit-scrollbar {
+  width: 0;
+}
+
+.newsCards .card {
+  padding: 1rem 2rem;
+  border-radius: 10%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.newsCards .card .lower {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newsCards .card .c-img {
+  background-image: url("./components/assets/virus.jpg");
+  width: 100%;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+}
+
+.newsCards .card p {
+  max-height: 100px;
+  overflow: hidden;
+  font-size: 16px;
+  color: white;
+  font-weight: 300;
+  margin-top: -5%;
+}
+
+.newsCards .card h4 {
+  color: white;
+  font-size: 24px;
+}
+
+.newsCards .card a {
+  border: 2px solid #E37561;
+  border-radius: 20px;
+  color: #E37561;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  width: 40%;
+  text-align: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.App {
+  background: -webkit-gradient(linear, left top, left bottom, from(#2C4664), to(#04080D));
+  background: linear-gradient(to bottom, #2C4664, #04080D);
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.germany .stats {
+  color: #E37561;
+  width: 50%;
+  padding-left: 5rem;
+}
+
+.germany .stats p {
+  font-size: 40px;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.germany .stats p span {
+  font-size: 80px;
+}
+
+.germany .stats .akt {
+  color: white;
+  font-size: 20px;
+  padding-right: 5rem;
+  margin-top: -2rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .headline h1 {
+    font-size: 6rem;
+  }
+  .headline h2 {
+    font-size: 4rem;
+    bottom: 10px;
+  }
+  .numbers .totalNumbers {
+    font-size: 4rem;
+    margin-top: 5rem;
+  }
+  .germany .stats {
+    color: #E37561;
+    width: 90%;
+    padding-left: 1rem;
+  }
+  .germany .stats p {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 2rem;
+  }
+  .germany .stats p span {
+    font-size: 3rem;
+  }
+  .germany .stats .akt {
+    font-size: 0.9rem;
+    padding-right: 0;
+    margin-top: -1rem;
+  }
+  .newsCards .card {
+    max-height: 370px;
+    min-width: 300px;
+  }
+  .newsCards .card h4 {
+    word-break: break-all;
+  }
+  .newsCards .card .lower {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=App.css.map */
