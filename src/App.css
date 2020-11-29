@@ -197,7 +197,6 @@ h2 {
 }
 
 .newsCards .card p {
-  max-height: 100px;
   overflow: hidden;
   font-size: 16px;
   color: white;
@@ -273,7 +272,7 @@ h2 {
   margin-top: -2rem;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
   .headline h1 {
     font-size: 6rem;
   }

@@ -186,7 +186,6 @@ h2{
             }
         }
         p{
-            max-height: 100px;
             overflow: hidden;
             font-size: 16px;
             color: white;
@@ -247,7 +246,7 @@ justify-content: space-between;
 }
 
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 1200px){
     .headline{
         h1{
             font-size: 6rem;

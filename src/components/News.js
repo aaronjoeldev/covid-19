@@ -33,7 +33,7 @@ function News() {
   
           useEffect(() => {
             setAppState({ loading: true });
-            const apiUrl = 'https://gnews.io/api/v4/search?q=corona&token=7e1140834e066608272e30de241a65ad';
+            const apiUrl = 'https://gnews.io/api/v4/search?q=corona&lang=de&token=7e1140834e066608272e30de241a65ad';
             axios.get(apiUrl).then((repos) => {
               const allRepos = repos.data;
               setItems( allRepos.articles );
@@ -58,7 +58,7 @@ function News() {
                             <img src={news.image} />
                         </div>
                         <h4>{news.title}</h4>
-                        <p>{news.content}</p>
+                        <p>{news.content.slice(0,220)}</p>
                         <div className="lower">
                             <div>
                                 <p>Datum: {news.publishedAt.slice(0,10)}</p>
